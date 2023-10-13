@@ -70,6 +70,8 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ResumeScreeningProject.wsgi.application'
 
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases

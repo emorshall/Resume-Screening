@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DBNavigator.Project.DataEditorManager">
     <record-view-column-sorting-type value="BY_INDEX" />
-    <value-preview-text-wrapping value="false" />
+    <value-preview-text-wrapping value="true" />
     <value-preview-pinned value="false" />
   </component>
   <component name="DBNavigator.Project.DatabaseBrowserManager">
@@ -12,8 +12,8 @@
     <loaded-nodes />
   </component>
   <component name="DBNavigator.Project.DatabaseConsoleManager">
-    <connection id="f0dc7e13-c409-42d1-b8ea-8af64daecc7b">
-      <console name="Connection" type="STANDARD" schema="main" session="Main"><![CDATA[select * from "ResumeScreeningApp_candidateprofile"]]></console>
+    <connection id="70487417-9679-49f5-ad4d-cb13477df710">
+      <console name="Connection" type="STANDARD" schema="" session="Main"><![CDATA[select * from]]></console>
     </connection>
   </component>
   <component name="DBNavigator.Project.DatabaseEditorStateManager">
@@ -22,19 +22,13 @@
   <component name="DBNavigator.Project.DatabaseFileManager">
     <open-files />
   </component>
-  <component name="DBNavigator.Project.DatasetFilterManager">
-    <filter-actions connection-id="f0dc7e13-c409-42d1-b8ea-8af64daecc7b" dataset="main.ResumeScreeningApp_login" active-filter-id="" />
-  </component>
-  <component name="DBNavigator.Project.ExecutionManager">
-    <retain-sticky-names value="false" />
-  </component>
   <component name="DBNavigator.Project.ObjectQuickFilterManager">
     <last-used-operator value="EQUAL" />
     <filters />
   </component>
   <component name="DBNavigator.Project.Settings">
     <connections>
-      <connection id="f0dc7e13-c409-42d1-b8ea-8af64daecc7b" active="true" signed="true">
+      <connection id="70487417-9679-49f5-ad4d-cb13477df710" active="true" signed="true">
         <database>
           <name value="Connection" />
           <description value="" />
@@ -44,15 +38,8 @@
           <driver-source value="BUNDLED" />
           <driver-library value="" />
           <driver value="" />
-          <url-type value="FILE" />
-          <host value="" />
-          <port value="" />
-          <database value="" />
-          <tns-folder value="" />
-          <tns-profile value="" />
-          <files>
-            <file path="C:\Users\prabhu.jaypal.nadar\Hackathon\RESUME SCREENING\hackathonProject\ResumeScreeningProject\db.sqlite3" schema="main" />
-          </files>
+          <url-type value="CUSTOM" />
+          <url value="jdbc:sqlite:sqlite.db" />
           <type value="NONE" />
           <user value="" />
           <deprecated-pwd value="" />

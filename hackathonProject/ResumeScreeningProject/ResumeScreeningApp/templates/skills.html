@@ -22,33 +22,20 @@
                 </div>
                 <div class="card-body">
 
-                    <form action="resumeProfiling" method="POST">
+                    <form action="skillSubmit" method="POST">
                         {% csrf_token %}
                         <div class="row mb-3">
                             <div class="col-md-3">
-                                <label for="name">Profile Name</label>
+                                <label for="name">Skill Name</label>
                                 <div class="form-group mb-3 mb-md-0">
-                                    <input name="profile_name" class="form-control" id="profile_name" type="text"
-                                           placeholder="Enter your user name"/>
+                                    <input name="skill_name" class="form-control" onchange="skillValidation()"
+                                           id="skill_name" required type="text"
+                                           placeholder="Enter skill name"/>
                                 </div>
                             </div>
 
                             <div class="col-md-3">
-                                <label for="name">Profile Keyword</label>
-                                <div class="form-group">
-                                    <select name="profile_keyword" id="example-getting-started" class="form-select"
-                                            multiple="multiple">
-                                        {% for dta in skill_data %}
-                                        {% if dta.active == True %}
-                                        <option value="{{dta.skill_name}}">{{dta.skill_name}}</option>
-                                        {% endif %}
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-
-                            <div class="col-md-3">
-                                <label for="password">Profile Status</label>
+                                <label for="skill_status">Skill Status</label>
                                 <div class="form-group">
                                     <select name='active' id='active' class="form-select">
                                         <option value="true">Active</option>
@@ -60,25 +47,19 @@
                             <div class="col-md-2">
                                 <div class="d-grid">
                                     <label for="password">&nbsp</label>
-                                    <button class="btn btn-primary btn-block" type="submit">Create Category</button>
+                                    <button class="btn btn-primary btn-block" type="submit">Create Skill</button>
                                 </div>
                             </div>
                         </div>
-
                     </form>
 
                 </div>
-                <script type="text/javascript">
-                    $(document).ready(function() {
-                        $('#example-getting-started').multiselect();
-                    });
-                </script>
 
             </div>
             <div class="card mb-4">
                 <div class="card-header">
                     <i class="fas fa-table me-1"></i>
-                    List Resume Category
+                    List Skills
                 </div>
                 <div class="card-body">
                     <table id="datatablesSimple">
@@ -91,26 +72,23 @@
                         <thead>
 
                         <tr>
-                            <th>Profile Name</th>
-                            <th>Profile Keyword</th>
+                            <th>Skill Name</th>
                             <th>Active Status</th>
-                            <th>Delete Profile</th>
+                            <th>Delete Skill</th>
 
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
-                            <th>Profile Name</th>
-                            <th>Profile Keyword</th>
+                            <th>Skill Name</th>
                             <th>Active Status</th>
-                            <th>Delete Profile</th>
+                            <th>Delete Skill</th>
                         </tr>
                         </tfoot>
                         <tbody>
-                        {% for item in profile_data %}
+                        {% for item in skill_data %}
                         <tr>
-                            <td>{{item.profile_name}}</td>
-                            <td>{{item.profile_keyword}}</td>
+                            <td>{{item.skill_name}}</td>
                             <td>
                                 {% if item.active == True %}
                                 <input class="form-check-input" id="active[]" name="{{item.id}}"
@@ -120,9 +98,7 @@
                                        onclick="updateProfile" type="checkbox">
                                 {% endif %}
                             </td>
-                            <td>
-
-                            </td>
+                            <td></td>
                         </tr>
                         {% endfor %}
                         </tbody>
@@ -154,6 +130,26 @@
 <script src="{% static 'js/bootstrap-multiselect.js' %}"></script>
 <link rel="stylesheet" href="{% static 'css/bootstrap-multiselect.css' %}" type="text/css"/>
 
+<!--<script type="text/javascript">-->
+<!--    document.getElementById("skill_name").onchange = function() {skillValidation()};-->
+<!--    function skillValidation(){-->
+<!--        var x = document.getElementById("skill_name");-->
+<!--        alert(x.value)-->
+<!--        x.value.toLowerCase();-->
+<!--        if (!x.value.trim().length == 0) {-->
+<!--            var parseString = "{{ skill_json|safe|escapejs }}"-->
+<!--&lt;!&ndash;            parseString.replace(/&quot;/ig,'"');&ndash;&gt;-->
+<!--            var skillList = JSON.parse(parseString);-->
+<!--            alert(skillList)-->
+<!--            for (let i = 0; i < skillList.length; i++) {-->
+<!--            alert(skillList[i].skill_name)-->
+<!--                if(skillList[i].skill_name == x.value){-->
+<!--                    alert("skill already exists");-->
+<!--                }-->
+<!--            }-->
+<!--        }-->
+<!--    }-->
+<!--</script>-->
 
 </body>
 </html>
