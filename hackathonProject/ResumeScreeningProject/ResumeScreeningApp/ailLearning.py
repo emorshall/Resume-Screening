@@ -14,7 +14,7 @@ print("-----------------------------------------------------------")
 with open("C:/Users/prabhu.jaypal.nadar/Hackathon/resume_txt.txt", "w") as txt:
     txt.write(text)
 
-api_key = "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"
+api_key = ""
 
 skill_keyword = ['html', 'react', 'javascript']
 
